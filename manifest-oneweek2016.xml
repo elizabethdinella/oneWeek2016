@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="MailApp" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
+  <Id>0a7e4a27-8937-438a-ac1b-f7cf4ee14fb4</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Elizabeth Dinella</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="oneWeek2016"/>
+  <Description DefaultValue="Sends emails when the recipient is most likely to read them and reminds users to follow up with recipients"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:8443/images/hi-res-icon.png"/>
+  <AppDomains>
+    <AppDomain>https://login.windows.net</AppDomain>
+    <AppDomain>https://login.microsoftonline.net</AppDomain>
+    <AppDomain>https://login.microsoftonline.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="MailBox" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://localhost:8443/appread/index.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+    <Form xsi:type="ItemEdit">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://localhost:8443/appcompose/index.html"/>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+  </Rule>
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="funcFile"/>
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="group1">
+                <Label resid="groupLabel1"/>
+                <Control xsi:type="Button" id="uilessButton1">
+                  <Label resid="uilessButtonLabel1"/>
+                  <Supertip>
+                    <Title resid="uilessButtonSuperTipTitle1"/>
+                    <Description resid="uilessButtonSuperTipDesc1"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="uilessButtonIcon1-16"/>
+                    <bt:Image size="32" resid="uilessButtonIcon1-32"/>
+                    <bt:Image size="80" resid="uilessButtonIcon1-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>buttonFunction1</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="group2">
+                <Label resid="groupLabel2"/>
+                <Control xsi:type="Button" id="uilessButton2">
+                  <Label resid="uilessButtonLabel2"/>
+                  <Supertip>
+                    <Title resid="uilessButtonSuperTipTitle2"/>
+                    <Description resid="uilessButtonSuperTipDesc2"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="uilessButtonIcon2-16"/>
+                    <bt:Image size="32" resid="uilessButtonIcon2-32"/>
+                    <bt:Image size="80" resid="uilessButtonIcon2-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>buttonFunction2</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="uilessButtonIcon1-16" DefaultValue="https://localhost:8443/images/icon-16.png"/>
+        <bt:Image id="uilessButtonIcon1-32" DefaultValue="https://localhost:8443/images/icon-32.png"/>
+        <bt:Image id="uilessButtonIcon1-80" DefaultValue="https://localhost:8443/images/icon-80.png"/>
+        <bt:Image id="uilessButtonIcon2-16" DefaultValue="https://localhost:8443/images/icon-16.png"/>
+        <bt:Image id="uilessButtonIcon2-32" DefaultValue="https://localhost:8443/images/icon-32.png"/>
+        <bt:Image id="uilessButtonIcon2-80" DefaultValue="https://localhost:8443/images/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="funcFile" DefaultValue="https://localhost:8443/FunctionFile/Functions.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="groupLabel1" DefaultValue="Group 1"/>
+        <bt:String id="groupLabel2" DefaultValue="Group 2"/>
+        <bt:String id="uilessButtonLabel1" DefaultValue="UI-less Button 1"/>
+        <bt:String id="uilessButtonLabel2" DefaultValue="UI-less Button 2"/>
+        <bt:String id="uilessButtonSuperTipTitle1" DefaultValue="UI-less Button 1"/>
+        <bt:String id="uilessButtonSuperTipTitle2" DefaultValue="UI-less Button 2"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="uilessButtonSuperTipDesc1" DefaultValue="This is the description for UI-less Button 1"/>
+        <bt:String id="uilessButtonSuperTipDesc2" DefaultValue="This is the description for UI-less Button 2"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
