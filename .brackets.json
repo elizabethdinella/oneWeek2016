@@ -1,0 +1,22 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/microsoft.office.js/scripts/office/1/powerpoint-ios-16.00.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/microsoft.office.js/scripts/office/1/word-15.js",
+        "picker.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/microsoft.office.js/scripts/office/1/word-web-16.00.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/angular-sanitize/angular-sanitize.min.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/angular-sanitize/angular-sanitize.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/angular-sanitize/index.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/angular/angular.min.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/angular/index.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/microsoft.office.js/scripts/office/1/project-15.01.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/microsoft.office.js/scripts/office/1/outlook-15.02.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/microsoft.office.js/scripts/office/1/excel-web-16.00.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/microsoft.office.js/scripts/office/1/excel-15.01.debug.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/angular/angular.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/adal-angular-experimental/Gruntfile.js",
+        "/home/elizabeth/Documents/oneWeek2016/appread/services/data.service.js",
+        "/home/elizabeth/Documents/oneWeek2016/appread/home/home.controller.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/CommandBar/Jquery.CommandBar.js"
+    ]
+}
