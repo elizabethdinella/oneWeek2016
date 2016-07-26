@@ -1,6 +1,61 @@
   angular.module('officeAddin')
          .controller('homeController', ['$scope', '$http', function($scope, $http) {
+            
+        
+         $scope.getSentiment = function(){
+            $scope.getMessageBody();
+            var url = 'https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment';
+            var text = "messageBody"
              
+            if($scope.messageBody){
+               text = $scope.messageBody;  
+            }
+             
+            var postData = {
+                  "documents": [
+                    {
+                      "language": "en",
+                      "id": "string",
+                      "text": text
+                    }
+                  ]
+            };
+             
+            return $http({
+                url: url,
+                method: 'POST',
+                headers: {
+                   /* 'Access-Control-Allow-Origin':  'https://westus.api.cognitive.microsoft.com',*/
+                    'Content-type': 'application/json',
+                    'Ocp-Apim-Subscription-Key':  '1c510246edaf4ca48f5bd1ab7766e771'
+                },
+                
+                data: postData
+            });
+         }
+         
+         $scope.handleSentimentResult = function() {
+             $scope.getSentiment().success(function(results, status){
+                  if(!$scope.messageBody){
+                      $scope.sentimentScore = 0.5;
+                      return;
+                  }
+                  $scope.sentimentScore = results.documents[0].score;
+                  console.log($scope.sentimentScore);
+             }).error(function(err, status){
+                  console.log(err); 
+             });
+         }
+         
+         $scope.getMessageBody = function(){
+             Office.context.mailbox.item.body.getAsync(
+                  "text",
+                  { asyncContext:"This is passed to the callback" },
+                      function callback(result) {
+                            $scope.messageBody = result.value; 
+                 });
+         }
+         
              
         $scope.bingSearch = function(){
   
@@ -13,7 +68,7 @@
                     'Authorization': 'Basic ' + 'OjYyRTNnVzRvQXBLRk93dEtVU0h0SXJhaTFOZ2twNElVZEJ3ckNmMmp0TlU='
                 }
             });
-       }
+        }
        
         $scope.handleSearchResults = function(){
             $scope.bingSearch().success(function(results, status){
