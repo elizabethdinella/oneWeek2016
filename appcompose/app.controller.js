@@ -36,6 +36,23 @@
               $http.get("https://graph.microsoft.com/v1.0/me/messages");         
         }
              
+        function callback(result) {
+          if (result.error) {
+            showMessage(result.error);
+          } else {
+            showMessage("Attachment added");
+          }
+        }
+
+        $scope.addAttachment = function(source){
+          // The values in asyncContext can be accessed in the callback
+          var options = { 'asyncContext': { var1: 1, var2: 2 } };
+
+          var attachmentURL = source;
+          Office.context.mailbox.item.addFileAttachmentAsync(attachmentURL, attachmentURL, options, callback);
+        }
+        
+        
         var item;
 
         Office.initialize = function () {

@@ -46,8 +46,9 @@
     </form>-->
     <button> auth</button>
     <button ng-click="handleSearchResults()">test</button>
-    <div ng-show="resultObj" ng-repeat="result in resultObj.d.results"><img class="image" src="{{result.MediaUrl}}"/> </div>
-    <!--ng-repeat="result in resultObj.results"-->
+    <div ng-show="resultObj" ng-repeat="result in resultObj.d.results">
+        <img class="image" src="{{result.MediaUrl}}" ng-click="addAttachment(result.MediaUrl)"/> 
+    </div>
 
   <div id="container">
     <div data-ng-view></div>
