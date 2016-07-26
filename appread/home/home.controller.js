@@ -1,12 +1,12 @@
-(function(){
+/*(function(){
   'use strict';
 
   angular.module('officeAddin')
          .controller('homeController', ['dataService', homeController]);
 
-  /**
+  *
    * Controller constructor
-   */
+   
   function homeController(dataService){
     var vm = this;  // jshint ignore:line
     vm.title = 'home controller';
@@ -22,4 +22,4 @@
     }
   }
 
-})();
+})();*/

@@ -6,16 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-
+  <meta http-equiv="X-Frame-Options" content="allow">
+    
+  <script src="//appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script>
+      <script type="text/javascript">
+        Office.initialize = function (reason) {
+            angular.bootstrap(document, ['officeAddin']);
+        };
+    </script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-sanitize.min.js"></script>
-  <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/adal.min.js"></script>
-  <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/adal-angular.min.js"></script>
+  <script src="../bower_components/adal-angular-experimental/dist/adal-angular.min.js"></script>
+  <script src="../bower_components/adal-angular-experimental/dist/adal.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
   <!--<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">-->
-  <script src="//appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script>
-
+    
   <!-- To enable offline debugging using a local reference to Angular-*.js & Office.js, use: -->
   <!--<script src="../bower_components/angular/angular.min.js"></script>  -->
   <!--<script src="../bower_components/angular-route/angular-route.min.js"></script>  -->
@@ -28,21 +35,29 @@
   <!--<script src="../scripts/jquery.fabric.min.js"></script>  -->
 
   <link href="../content/Office.css" rel="stylesheet" type="text/css" />
-  <link href="../bower_components/microsoft.office.js/styles/OfficeThemes.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body ng-app="officeAddin" ng-controller="homeController">
+    
+    <h1> TITLE </h1>
+    <div id="message"></div> 
+   <!-- <form action="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=8a7b8264-7be1-4cbc-9178-5941c91c4c86&scope=mail.readWrite%20mail.send%20openid&redirect_uri=https%3A%2F%2Flocalhost%3A8443%2Fappcompose%2Findex.html%3Fet%3D%26_host_Info%3DOutlook%7CWeb%7C16.01%7Cen-US%7C78064572-6510-c8e9-c7a2-1b85252efae6%7C&state=1708cd73-d122-412d-bf3f-f953f6df88b3&client-request-id=2930101c-e957-46f0-acd8-f15d851d9b90&x-client-SKU=Js&x-client-Ver=2.0.0-experimental&nonce=11468755-afb6-4a13-9b3d-8521e342aeff">
+        <input type="submit" value="Auth">
+    </form>-->
+    <button ng-click="handleSentimentResult()"> sentiment </button>
+    <div ng-show=""> {{sentimentScore}} </div>
 
   <div id="container">
     <div data-ng-view></div>
   </div>
 
-  <script src="app.module.js"></script>
+  <script src="app.module.js" type="text/javascript"></script>
   <script src="app.config.js"></script>
   <script src="app.adalconfig.js"></script>
-  <script src="app.routes.js"></script>
-  <script src="services/data.service.js"></script>
-  <script src="home/home.controller.js"></script>
+  <script src="app.routes.js" type="text/javascript"></script>
+  <script src="services/data.service.js" type="text/javascript"></script>
+  <script src="app.controller.js" type="text/javascript"></script>
+<!--  <script src="home/home.controller.js" type="text/javascript"></script>-->
 
 </body>
 

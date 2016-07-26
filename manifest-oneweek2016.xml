@@ -36,6 +36,7 @@
   <Permissions>ReadWriteMailbox</Permissions>
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

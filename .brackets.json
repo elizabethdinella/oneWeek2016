@@ -32,6 +32,8 @@
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/TextField/Jquery.TextField.js",
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/Spinner/Spinner.js",
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/MessageBanner/MessageBanner.js",
-        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/ListItem/Jquery.ListItem.js"
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/ListItem/Jquery.ListItem.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/adal-angular-experimental/karma.conf.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/FacePile/Jquery.Facepile.js"
     ]
 }
