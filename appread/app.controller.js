@@ -73,6 +73,22 @@
                  });
          }
          
+         $scope.constructReply = function(){
+             Office.context.mailbox.item.displayReplyForm(
+            {
+              'htmlBody' : 'hi',
+              'attachments' :
+              [
+                {
+                  'type' : Office.MailboxEnums.AttachmentType.File,
+                  'name' : 'dog',
+                  'url' : 'http://i.imgur.com/sRgTlGR.jpg'
+                }
+              ]
+            });
+         }
+         
+
              
         var item;
 
