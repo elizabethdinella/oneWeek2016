@@ -17,6 +17,11 @@
         "/home/elizabeth/Documents/oneWeek2016/bower_components/adal-angular-experimental/Gruntfile.js",
         "/home/elizabeth/Documents/oneWeek2016/appread/services/data.service.js",
         "/home/elizabeth/Documents/oneWeek2016/appread/home/home.controller.js",
-        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/CommandBar/Jquery.CommandBar.js"
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/CommandBar/Jquery.CommandBar.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/NavBar/Jquery.NavBar.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/PeoplePicker/Jquery.PeoplePicker.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/microsoft.office.js/scripts/office/1/excel-ios-16.00.debug.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/Breadcrumb/Breadcrumb.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/dist/samples/Components/Dropdown/Jquery.Dropdown.js"
     ]
 }

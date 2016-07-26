@@ -17,6 +17,6 @@
        }
           // cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not work for localhost. 
        
-        adalProvider.init(adalConfig, $httpProvider);
+       /* adalProvider.init(adalConfig, $httpProvider);*/
     }])
 })();

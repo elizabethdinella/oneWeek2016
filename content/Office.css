@@ -177,3 +177,7 @@ body {
     scrollbar-track-color: white;
     scrollbar-face-color: white;
 }
+
+.image {
+     max-width: 75%;   
+}
