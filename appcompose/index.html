@@ -34,26 +34,20 @@
   <!--<script src="../content/fabric.components.min.css"></script>  -->
   <!--<script src="../scripts/jquery.fabric.min.js"></script>  -->
 
+      <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.2.0/fabric.min.css">
+ <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.2.0/fabric.components.min.css">
   <link href="../content/Office.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body ng-app="officeAddin" ng-controller="homeController">
     
-    <h1> TITLE </h1>
-    <div id="message"></div> 
-   <!-- <form action="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=8a7b8264-7be1-4cbc-9178-5941c91c4c86&scope=mail.readWrite%20mail.send%20openid&redirect_uri=https%3A%2F%2Flocalhost%3A8443%2Fappcompose%2Findex.html%3Fet%3D%26_host_Info%3DOutlook%7CWeb%7C16.01%7Cen-US%7C78064572-6510-c8e9-c7a2-1b85252efae6%7C&state=1708cd73-d122-412d-bf3f-f953f6df88b3&client-request-id=2930101c-e957-46f0-acd8-f15d851d9b90&x-client-SKU=Js&x-client-Ver=2.0.0-experimental&nonce=11468755-afb6-4a13-9b3d-8521e342aeff">
-        <input type="submit" value="Auth">
-    </form>-->
-    <button ng-click="handleSentimentResult()"> sentiment </button>
-    <button ng-click="handleSearchResults()">test</button>
-    <div ng-show=""> {{sentimentScore}} </div>
-    <div ng-show="resultObj" ng-repeat="result in resultObj.d.results">
+    <h1 class="ms-font-su">PUPPY POST </h1>
+    <button ng-hide="resultObj" class="ms-Button ms-Button--primary" ng-click="handleSearchResults()"><span class="ms-Button-label"> Add a dog! </span> <span class="ms-Button-description">searches for dogs for you to add</span> </button>
+    <br />
+    <br />
+    <div class="results" ng-show="resultObj" ng-repeat="result in resultObj.d.results">
         <img class="image" src="{{result.MediaUrl}}" ng-click="addAttachment(result.MediaUrl)"/> 
     </div>
-
-  <div id="container">
-    <div data-ng-view></div>
-  </div>
 
   <script src="app.module.js" type="text/javascript"></script>
   <script src="app.config.js"></script>
@@ -61,7 +55,6 @@
   <script src="app.routes.js" type="text/javascript"></script>
   <script src="services/data.service.js" type="text/javascript"></script>
   <script src="app.controller.js" type="text/javascript"></script>
-<!--  <script src="home/home.controller.js" type="text/javascript"></script>-->
 
 </body>
 
