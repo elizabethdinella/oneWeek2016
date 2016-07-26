@@ -39,6 +39,7 @@
         "/home/elizabeth/Documents/oneWeek2016/bower_components/angular-route/angular-route.js",
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/NavBar/Jquery.NavBar.js",
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/PeoplePicker/Jquery.PeoplePicker.js",
-        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/Breadcrumb/Breadcrumb.js"
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/Breadcrumb/Breadcrumb.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/Dropdown/Jquery.Dropdown.js"
     ]
 }
