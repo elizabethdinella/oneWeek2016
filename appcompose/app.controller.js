@@ -25,7 +25,6 @@
                 url: url,
                 method: 'POST',
                 headers: {
-                   /* 'Access-Control-Allow-Origin':  'https://westus.api.cognitive.microsoft.com',*/
                     'Content-type': 'application/json',
                     'Ocp-Apim-Subscription-Key':  '1c510246edaf4ca48f5bd1ab7766e771'
                 },
@@ -87,10 +86,6 @@
             
         }
         
-        $scope.getTime = function(){
-              $http.get("https://graph.microsoft.com/v1.0/me/messages");         
-        }
-             
         function callback(result) {
           if (result.error) {
             showMessage(result.error);

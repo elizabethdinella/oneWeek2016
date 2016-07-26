@@ -42,6 +42,14 @@
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/Breadcrumb/Breadcrumb.js",
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/Dropdown/Jquery.Dropdown.js",
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/SearchBox/Jquery.SearchBox.js",
-        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/ProgressIndicator/ProgressIndicator.js"
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/ProgressIndicator/ProgressIndicator.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/DatePicker/PickaDate.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/DatePicker/Jquery.DatePicker.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/ContextualMenu/Jquery.ContextualMenu.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/PersonaCard/Jquery.PersonaCard.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/Facepile/Jquery.Facepile.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/TextField/Jquery.TextField.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/Spinner/Spinner.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/MessageBanner/MessageBanner.js"
     ]
 }
