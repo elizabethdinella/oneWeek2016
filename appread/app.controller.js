@@ -147,7 +147,7 @@
                  });
          }
          
-         $scope.constructReply = function(){
+         $scope.constructReply = function(attatchURL){
              Office.context.mailbox.item.displayReplyForm(
             {
               'htmlBody' : 'hi',
@@ -156,7 +156,7 @@
                 {
                   'type' : Office.MailboxEnums.AttachmentType.File,
                   'name' : 'dog',
-                  'url' : 'http://i.imgur.com/sRgTlGR.jpg'
+                  'url' :  attatchURL
                 }
               ]
             });

@@ -50,6 +50,7 @@
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/Facepile/Jquery.Facepile.js",
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/TextField/Jquery.TextField.js",
         "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/Spinner/Spinner.js",
-        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/MessageBanner/MessageBanner.js"
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/MessageBanner/MessageBanner.js",
+        "/home/elizabeth/Documents/oneWeek2016/bower_components/office-ui-fabric/src/components/ListItem/Jquery.ListItem.js"
     ]
 }

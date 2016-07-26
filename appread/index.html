@@ -45,11 +45,14 @@
     <div class="ms-font-xl" id="message"></div> 
     <div id="message"> </div>
     <br />
-    <button class="ms-Button ms-Button--primary" ng-click="handleKeyWordsResult()"><span class="ms-Button-label"> GO </span> <span class="ms-Button-description">creates a reply with a dog attatchment</span> </button>
+    <button ng-show="resultsObj.length==0" class="ms-Button ms-Button--primary" ng-click="handleKeyWordsResult()"><span class="ms-Button-label"> GO </span> <span class="ms-Button-description">creates a reply with a dog attatchment</span> </button>
+    <br />
+    <br />
+    <div ng-show="resultsObj.length>0" class="ms-font-xl"> Select a dog to send it! </div> 
     <br />
     <br />
     <div class="results" ng-show="resultsObj.length>0" ng-repeat="result in resultsObj">
-        <img class="image" src="{{result}}" ng-click="addAttachment(result.MediaUrl)"/> 
+        <img class="image" src="{{result}}" ng-click="constructReply(result)"/> 
     </div>
     
   <script src="app.module.js" type="text/javascript"></script>
