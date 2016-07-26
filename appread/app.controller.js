@@ -1,9 +1,14 @@
   angular.module('officeAddin')
          .controller('homeController', ['$scope', '$http', function($scope, $http) {
             
+             $scope.sentimentScore = .1;
+             
+             
+         $scope.getSentimentScore = function(){
+             return $scope.sentimentScore;
+         }
         
          $scope.getSentiment = function(){
-            $scope.getMessageBody();
             var url = 'https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment';
             var text = "messageBody"
              
@@ -42,6 +47,15 @@
                   }
                   $scope.sentimentScore = results.documents[0].score;
                   console.log($scope.sentimentScore);
+                  var badMessage = "It looks like ___ isn't in a good mood, send them a dog to make them feel better!"
+                  var goodMessage = "It looks like ___  is already happy, but send them a dog to make them even happier!"
+                  var displayMessage = "";
+                  if($scope.sentimentScore >= .5){
+                      displayMessage = goodMessage;
+                  }else{
+                      displayMessage = badMessage;
+                  }
+                  document.getElementById('message').innerText += displayMessage;
              }).error(function(err, status){
                   console.log(err); 
              });
@@ -53,41 +67,27 @@
                   { asyncContext:"This is passed to the callback" },
                       function callback(result) {
                             $scope.messageBody = result.value; 
+                            $scope.handleSentimentResult();
                  });
          }
          
              
-        function callback(result) {
-          if (result.error) {
-            showMessage(result.error);
-          } else {
-            showMessage("Attachment added");
-          }
-        }
-
-        $scope.addAttachment = function(source){
-          // The values in asyncContext can be accessed in the callback
-          var options = { 'asyncContext': { var1: 1, var2: 2 } };
-
-          var attachmentURL = source;
-          Office.context.mailbox.item.addFileAttachmentAsync(attachmentURL, attachmentURL, options, callback);
-        }
-        
-        
         var item;
 
         Office.initialize = function () {
             item = Office.context.mailbox.item;
-            document.getElementById('message').innerText += "INIT"; 
             // Checks for the DOM to load using the jQuery ready function.
             $(document).ready(function () {
                 // After the DOM is loaded, app-specific code can run.
                 // Get all the recipients of the composed item.
-                getAllRecipients();
+                $scope.getMessageBody();
+                //getAllRecipients();
+                
+                console.log($scope.sentimentScore);
             });
         }
 
-        // Get the email addresses of all the recipients of the composed item.
+/*        // Get the email addresses of all the recipients of the composed item.
         function getAllRecipients() {
             // Local objects to point to recipients of either
             // the appointment or message that is being composed.
@@ -102,12 +102,12 @@
                 toRecipients = item.to;
                 ccRecipients = item.cc;
                 bccRecipients = item.bcc;
-            }
+            }*/
 
             // Use asynchronous method getAsync to get each type of recipients
             // of the composed item. Each time, this example passes an anonymous 
             // callback function that doesn't take any parameters.
-            toRecipients.getAsync(function (asyncResult) {
+            /*toRecipients.getAsync(function (asyncResult) {
                 if (asyncResult.status == Office.AsyncResultStatus.Failed){
                     write(asyncResult.error.message);
                 }
@@ -149,7 +149,7 @@
 
                 }); // End getAsync for bcc-recipients.
              }
-        }
+        }*/
 
         // Recipients are in an array of EmailAddressDetails
         // objects passed in asyncResult.value.

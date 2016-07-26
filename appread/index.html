@@ -44,8 +44,8 @@
    <!-- <form action="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=8a7b8264-7be1-4cbc-9178-5941c91c4c86&scope=mail.readWrite%20mail.send%20openid&redirect_uri=https%3A%2F%2Flocalhost%3A8443%2Fappcompose%2Findex.html%3Fet%3D%26_host_Info%3DOutlook%7CWeb%7C16.01%7Cen-US%7C78064572-6510-c8e9-c7a2-1b85252efae6%7C&state=1708cd73-d122-412d-bf3f-f953f6df88b3&client-request-id=2930101c-e957-46f0-acd8-f15d851d9b90&x-client-SKU=Js&x-client-Ver=2.0.0-experimental&nonce=11468755-afb6-4a13-9b3d-8521e342aeff">
         <input type="submit" value="Auth">
     </form>-->
-    <button ng-click="handleSentimentResult()"> sentiment </button>
-    <div ng-show=""> {{sentimentScore}} </div>
+    {{getSentimentScore()}}
+    <div id="message"> </div>
 
   <div id="container">
     <div data-ng-view></div>
