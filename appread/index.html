@@ -43,9 +43,8 @@
     
     <h1 class="ms-font-su"> PUPPY POST </h1>
     <div class="ms-font-xl" id="message"></div> 
-    <div id="message"> </div>
     <br />
-    <button ng-show="resultsObj.length==0" class="ms-Button ms-Button--primary" ng-click="handleKeyWordsResult()"><span class="ms-Button-label"> GO </span> <span class="ms-Button-description">creates a reply with a dog attatchment</span> </button>
+    <button ng-show="resultsObj.length==0 && messageReady" class="ms-Button ms-Button--primary" ng-click="handleKeyWordsResult()"><span class="ms-Button-label"> GO </span> <span class="ms-Button-description">creates a reply with a dog attatchment</span> </button>
     <br />
     <br />
     <div ng-show="resultsObj.length>0" class="ms-font-xl"> Select a dog to send it! </div> 

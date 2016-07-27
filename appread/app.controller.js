@@ -148,6 +148,7 @@
                       displayMessage = badMessage;
                   }
                   document.getElementById('message').innerText += displayMessage;
+                  $scope.messageReady = true;
              }).error(function(err, status){
                   console.log(err); 
              });
