@@ -55,10 +55,13 @@
                  });
          }
          
-             
+         
+         
         $scope.bingSearch = function(){
-  
-            var url = 'https://api.datamarket.azure.com/Bing/Search/v1/Image?Query=%27dog%27';
+            
+            var breedIndex = Math.floor((Math.random() * (dogBreeds.length - 1)) + 1);  
+            var breed = dogBreeds[breedIndex];
+            var url = 'https://api.datamarket.azure.com/Bing/Search/v1/Image?Query=%27dog%27' + breed + "%27cute%27";
 
             return $http({
                 url: url,

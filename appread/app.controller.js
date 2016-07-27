@@ -6,7 +6,7 @@
              
         $scope.bingSearch = function(searchTerm){
   
-            var url = 'https://api.datamarket.azure.com/Bing/Search/v1/Image?Query=%27dog%27' + searchTerm + "%27";
+            var url = 'https://api.datamarket.azure.com/Bing/Search/v1/Image?Query=%27dog%27' + searchTerm + "%27cute%27";
 
             return $http({
                 url: url,
