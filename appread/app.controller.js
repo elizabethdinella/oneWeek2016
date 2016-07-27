@@ -177,13 +177,8 @@
 
         Office.initialize = function () {
             item = Office.context.mailbox.item;
-            // Checks for the DOM to load using the jQuery ready function.
             $(document).ready(function () {
-                // After the DOM is loaded, app-specific code can run.
-                // Get all the recipients of the composed item.
                 $scope.getMessageBody();
-                //getAllRecipients();
-                
                 console.log($scope.sentimentScore);
             });
         }
