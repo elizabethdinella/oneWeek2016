@@ -35,7 +35,7 @@
   <!--<script src="../scripts/jquery.fabric.min.js"></script>  -->
 
       <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.2.0/fabric.min.css">
- <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.2.0/fabric.components.min.css">
+     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.2.0/fabric.components.min.css">
   <link href="../content/Office.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -43,9 +43,10 @@
     
     <h1 class="ms-font-su">PUPPY POST </h1>
     <button ng-hide="resultObj" class="ms-Button ms-Button--primary" ng-click="handleSearchResults()"><span class="ms-Button-label"> Add a dog! </span> <span class="ms-Button-description">searches for dogs for you to add</span> </button>
+    <button ng-show="resultObj" class="ms-Button ms-Button--primary" ng-click="handleSearchResults()"><i class="ms-Icon ms-Icon--refresh"></i><span class="ms-Button-description">searches for dogs for you to add</span> </button>
     <br />
     <br />
-    <div class="results" ng-show="resultObj" ng-repeat="result in resultObj.d.results">
+    <div class="results" ng-show="resultObj" ng-repeat="result in resultObj.d.results | limitTo: 10">
         <img class="image" src="{{result.MediaUrl}}" ng-click="addAttachment(result.MediaUrl)"/> 
     </div>
 
