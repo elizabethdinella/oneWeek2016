@@ -22,7 +22,9 @@
             
                 console.log("success!");
                 console.log(results);
-                $scope.resultsObj.push(results.d.results[0].MediaUrl);
+                if(results.d.results[0]){
+                    $scope.resultsObj.push(results.d.results[0].MediaUrl);
+                }
                 
             }).error(function(err, status){
                 
@@ -56,6 +58,10 @@
                   ]
             };
              
+           while(sizeof(postData) >= 10240){
+               $scope.trimMessageToSize(postData);
+           }
+             
             return $http({
                 url: url,
                 method: 'POST',
@@ -71,10 +77,11 @@
          $scope.handleKeyWordsResult = function() {
              $scope.keyPhrases = [];
              $scope.getKeyWords().success(function(results, status){
+                  console.log(results);
                   $scope.keyPhrases = results.documents[0].keyPhrases;
                   console.log("key phrases");
                   console.log($scope.keyPhrases);
-                  for(var i=0; i<$scope.keyPhrases.length; i++){
+                  for(var i=0; i<$scope.keyPhrases.length && i<20; i++){
                      $scope.handleSearchResults($scope.keyPhrases[i]);
                  }
              }).error(function(err, status){
@@ -82,6 +89,10 @@
              });
          }
         
+         
+         $scope.trimMessageToSize = function(data){
+             data["documents"][0]["text"] = data["documents"][0]["text"].substr(0, data["documents"][0]["text"].length-100);
+         }
         
          $scope.getSentiment = function(){
             var url = 'https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment';
@@ -101,6 +112,10 @@
                   ]
             };
              
+           while(sizeof(postData) >= 10240){
+               $scope.trimMessageToSize(postData);
+           }
+             
             return $http({
                 url: url,
                 method: 'POST',
@@ -119,6 +134,7 @@
                       $scope.sentimentScore = 0.5;
                       return;
                   }
+                  console.log(results);
                   $scope.sentimentScore = results.documents[0].score;
                   console.log($scope.sentimentScore);
                   var from = Office.context.mailbox.item.from;
@@ -150,15 +166,7 @@
          $scope.constructReply = function(attatchURL){
              Office.context.mailbox.item.displayReplyForm(
             {
-              'htmlBody' : 'hi',
-              'attachments' :
-              [
-                {
-                  'type' : Office.MailboxEnums.AttachmentType.File,
-                  'name' : 'dog',
-                  'url' :  attatchURL
-                }
-              ]
+              'htmlBody' : "<img src=" + '"' + attatchURL + '"' + "/>"
             });
          }
          
